@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>嘉骋林肯</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+    <script src="http://api.map.baidu.com/api?v=1.2"></script>
+  </head>
+
+  <body>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">山东嘉骋林肯</a>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">车型展示</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="car_mkc.html">林肯MKC</a>
+          <a class="dropdown-item" href="car_mkz.html">林肯MKZ</a>
+          <a class="dropdown-item" href="car_mkx.html">林肯MKX</a>
+          <a class="dropdown-item" href="car_continental.html">林肯Continental</a>
+          <a class="dropdown-item" href="car_navigator.html">林肯Navigator</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="drive.html">预约试驾</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="order.html">在线订车</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="maintenance.html">预约保养</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="message.html">客户留言</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">新闻发布</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about_lincoln.html">林肯之道</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="contact_us.html">联系我们</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="搜索">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+
+    <div class="container">
+
+<div style="width:800px;height:600px;border:1px solid gray;margin-top: 20px;margin-bottom: 20px;" id="map"></div>
+
+<div class="row"> <p>地址：济南市槐荫区经十路28169号（腊山立交桥西行800米路北）  电话：0531-87115888</p> </div>
+
+    </div> <!-- /container -->
+
+
+
+
+<footer class="footer">
+<p>版权所有 &copy; 山东嘉骋汽车服务有限公司 2017</p>
+</footer>
+
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+    <script type="text/javascript">
+
+    var map = new BMap.Map("map");
+    var center = new BMap.Point(116.924262, 36.657876);
+    map.centerAndZoom(center, 18);
+    // map.enableScrollWheelZoom();
+    // map.enableKeyboard();
+    var opts = {
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        offset: new BMap.Size(50, 100)
+    }
+    map.addControl(new BMap.NavigationControl(opts));
+    map.addControl(new BMap.MapTypeControl());
+
+    // create marks
+    data = [
+        [116.924262, 36.657876, "山东嘉骋林肯中心", "山东省济南市槐荫区经十路28169号"],
+    ];
+    $(data).each(function(i, val) {
+        var point = new BMap.Point(val[0], val[1]);
+
+        var lbl = new BMap.Label(val[2], {
+            offset: new BMap.Size(20, -40),
+            position: point
+        });
+        lbl.setStyle({
+            background: "",
+            color: "blue",
+            fontSize: "22px",
+            border: "1",
+            height: "120px",
+            width: "125px",
+            textAlign: "center",
+            lineHeight: "120px",
+            cursor: "pointer"
+        });
+        var marker = new BMap.Marker(point);
+        marker.setTitle(val[3]);
+        marker.setLabel(lbl);
+        map.addOverlay(marker);
+    });
+    </script>

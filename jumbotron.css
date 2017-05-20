@@ -1,0 +1,63 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+.carousel img {
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*min-width: 100%;*/
+  /*width: 950px;*/
+  /*max-width: 100%;*/
+  /*max-width: none;*/
+  /*height: 750px;*/
+  /*height: none;*/
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.jumbotron {
+    margin-bottom: 0px;
+}
+.jumbotron h1 {
+    text-align: center;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.custom-links {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.btn-w3r {
+    width: 150px;
+    height: 150px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.btn-w3r:hover {
+    background: #333;
+    color:#e75616;
+}
+.btn-w3r p {
+    margin-top: 50px;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.title h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.somespaces {
+    margin-top: 50px;
+}
