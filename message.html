@@ -17,7 +17,7 @@
   </head>
 
   <body>
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-primary">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -60,10 +60,6 @@
         <a class="nav-link" href="contact_us.html">联系我们</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="搜索">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-    </form>
   </div>
 </nav>
 
@@ -84,9 +80,9 @@
 
 <form>
   <div class="form-group row">
-    <label for="exampleSelect1" class="col-2 col-form-label">您的车型</label>
+    <label for="form_model" class="col-2 col-form-label">您的车型</label>
     <div class="col-10">
-        <select class="form-control" id="exampleSelect1">
+        <select class="form-control" id="form_model" name="model">
           <option>林肯MKC</option>
           <option>林肯MKX</option>
           <option>林肯MKZ</option>
@@ -97,26 +93,24 @@
   </div>
 
   <div class="form-group row">
-    <label for="exampleInputEmail1" class="col-2">车牌号</label>
+    <label for="form_license" class="col-2">车牌号</label>
     <div class="col-10">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="您的姓名">
-    <small id="emailHelp" class="form-text text-muted">请确保填写准确无误</small>
+    <input type="email" class="form-control" id="form_license" name="license" aria-describedby="licenseHelp" placeholder="车牌号">
     </div>
   </div>
 
   <fieldset class="form-group">
-  <div class="row">
-    <legend class="col-form-legend col-2">性别</legend>
+  <div class="row"><legend class="col-form-legend col-2">性别<span style="color:red;">*</span></legend>
     <div class="col-10">
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+        <input type="radio" class="form-check-input" name="sex" id="form_sex_m" value="m" checked>
         男
       </label>
     </div>
     <div class="form-check">
     <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        <input type="radio" class="form-check-input" name="sex" id="form_sex_f" value="f">
         女
       </label>
     </div>
@@ -124,36 +118,51 @@
   </div>
   </fieldset>
   <div class="form-group row">
-    <label for="exampleSelect1" class="col-2">您的城市</label>
+    <label for="form_city" class="col-2">您的城市</label>
     <div class="col-10">
-    <select class="form-control" id="exampleSelect1">
+    <select class="form-control" id="form_city" name="city">
       <option>济南</option>
-      <option>青岛</option>
+      <option>淄博</option>
+      <option>枣庄</option>
+      <option>东营</option>
       <option>烟台</option>
+      <option>潍坊</option>
+      <option>济宁</option>
+      <option>泰安</option>
+      <option>威海</option>
+      <option>日照</option>
+      <option>滨州</option>
+      <option>德州</option>
+      <option>聊城</option>
+      <option>临沂</option>
+      <option>菏泽</option>
+      <option>莱芜</option>
     </select>
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="exampleInputEmail1" class="col-2">您的姓名</label>
+    <label for="exampleInputEmail1" class="col-2">您的姓名<span style="color:red;">*</span></label>
     <div class="col-10">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="您的姓名">
-    <small id="emailHelp" class="form-text text-muted">请输入您的真实姓名</small>
+    <input type="email" class="form-control" id="form_name" name="name" aria-describedby="nameHelp" placeholder="您的姓名" required>
+    <small id="nameHelp" class="form-text text-muted">请输入您的真实姓名</small>
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="exampleInputEmail1" class="col-2">手机号码</label>
-    <div class="col-10"><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="手机号码">
-    <small id="emailHelp" class="form-text text-muted">请输入您的真实手机号码，以便我们跟您取得联系。</small>
+    <label for="form_phone" class="col-2">手机号码<span style="color:red;">*</span></label>
+    <div class="col-10"><input type="text" class="form-control" id="form_phone" name="phone" aria-describedby="phoneHelp" placeholder="手机号码" required>
+    <small id="phoneHelp" class="form-text text-muted">请输入您的真实手机号码，以便我们跟您取得联系。</small>
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="exampleTextarea" class="col-2">请您留言</label>
-    <div class="col-10"><textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    <label for="form_message" class="col-2">请您留言<span style="color:red;">*</span></label>
+    <div class="col-10"><textarea class="form-control" id="form_message" name="message" rows="3" required></textarea>
     </div>
   </div>
+
+  <small id="formHelp" class="form-text text-muted"><span style="color:red;">注意：标注(*)的项目为必填项目。</span></small>
 
   <div class="form-group row">
   <div class="offset-2 col-10">
@@ -161,36 +170,6 @@
   </div>
   </div>
 
-  <!--
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="checkbox" class="form-check-input">
-      Check me out
-    </label>
-  </div> -->
 </form>
 
 
@@ -219,9 +198,11 @@
     </div>
 
 
+<div class="jumbotron footer">
 <footer class="footer">
 <p>版权所有 &copy; 山东嘉骋汽车服务有限公司 2017</p>
 </footer>
+</div>
 
 <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
 <script src="https://cdn.bootcss.com/tether/1.4.0/js/tether.min.js"></script>
